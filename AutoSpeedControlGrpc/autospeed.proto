@@ -1,0 +1,21 @@
+﻿syntax = "proto3";
+package AutoSpeedControl;
+
+service AutoSpeed {
+  rpc Add (StringRequest) returns (SuccessReply) {}
+  rpc ReportMinMax (StringRequest) returns (StringReply) {}
+  rpc ReportSpeeding (StringRequest) returns (StringReply) {}
+}
+
+message StringRequest {
+  string data = 1;
+}
+
+message SuccessReply {
+  bool success = 1;
+}
+
+message StringReply {
+	string data = 1;
+	bool success = 2;
+}
